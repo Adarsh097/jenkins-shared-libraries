@@ -44,8 +44,8 @@ def call(Map config = [:]) {
                 git add ${manifestsPath}/*.yaml
                 git commit -m "Update image tag to ${imageTag} [ci skip]"
 
-                git remote set-url origin https://\${GIT_USERNAME}:\${GIT_PASSWORD}@github.com/Adarsh097/ecommerce-devops-project.git
-                git push origin HEAD
+                git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/Adarsh097/ecommerce-devops-project.git HEAD
+
             fi
         """
     }
