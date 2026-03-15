@@ -35,7 +35,7 @@ def call(Map config = [:]) {
 
             # Update ingress domain
             if [ -f "${manifestsPath}/10-ingress.yaml" ]; then
-                sed -i "s|host: .*|host: easyshop.letsdeployit.com|g" ${manifestsPath}/10-ingress.yaml
+                sed -i "s|host: .*|host: easyshop.adtechs.xyz|g" ${manifestsPath}/10-ingress.yaml
             fi
 
             if git diff --quiet; then
@@ -44,7 +44,7 @@ def call(Map config = [:]) {
                 git add ${manifestsPath}/*.yaml
                 git commit -m "Update image tag to ${imageTag} [ci skip]"
 
-                git remote set-url origin https://\${GIT_USERNAME}:\${GIT_PASSWORD}@github.com/Adarsh097/tws-e-commerce-app.git
+                git remote set-url origin https://\${GIT_USERNAME}:\${GIT_PASSWORD}@github.com/Adarsh097/ecommerce-devops-project.git
                 git push origin HEAD
             fi
         """
